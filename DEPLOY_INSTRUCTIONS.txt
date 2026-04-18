@@ -1,0 +1,170 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                  🚀 RecuperaYa! MVP PWA - DEPLOY INSTRUCTIONS                 ║
+║                          (Para no técnicos - Paso a Paso)                      ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+Tu MVP está 100% listo. Todo lo que necesitas hacer es esto:
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 1: CREAR GITHUB REPO (5 min)
+═════════════════════════════════
+
+1. Ve a: https://github.com/new
+2. Nombre del repo: "recuperaya-pwa"
+3. Descripción: "RecuperaYa MVP - Digital debt recovery platform"
+4. Click: "Create repository"
+
+Luego, en tu terminal (o GitHub Desktop):
+
+  git init
+  git add .
+  git commit -m "Initial RecuperaYa MVP"
+  git branch -M main
+  git remote add origin https://github.com/TU-USUARIO/recuperaya-pwa.git
+  git push -u origin main
+
+(Reemplaza TU-USUARIO con tu username de GitHub)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 2: CONECTAR A NETLIFY (5 min) ← AQUÍ ES DONDE SE PUBLICA
+════════════════════════════════════════════════════════
+
+1. Ve a: https://app.netlify.com
+2. Click: "Add new site" → "Import an existing project"
+3. Autoriza GitHub
+4. Selecciona repo: "recuperaya-pwa"
+5. Verifica Build settings:
+   - Build command: npm run build
+   - Publish directory: .next
+6. Click: "Deploy site"
+
+✅ Netlify auto-detecta todo. Es todo automático.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 3: AGREGAR FIREBASE KEYS EN NETLIFY (3 min) ← IMPORTANTE
+═════════════════════════════════════════════════════════════
+
+Una vez que Netlify terminó el deploy inicial (5-10 min):
+
+1. En Netlify Dashboard → Tu site → "Site settings"
+2. Click: "Environment"
+3. Click: "Add a variable" y agrega ESTOS 7 valores:
+
+   NEXT_PUBLIC_FIREBASE_API_KEY
+   AIzaSyDDDjP2GMZ4dzuhGc5yj5lOKtSKXcjcXJ0
+   
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+   recuperaya-f97af.firebaseapp.com
+   
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID
+   recuperaya-f97af
+   
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+   recuperaya-f97af.firebasestorage.app
+   
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+   449077277541
+   
+   NEXT_PUBLIC_FIREBASE_APP_ID
+   1:449077277541:web:7eac54fcd325de95af678c
+   
+   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+   G-XTJK9KRRNL
+
+4. Netlify auto-redeploya automáticamente ✅
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 4: VERIFICAR QUE FUNCIONA (5 min)
+═════════════════════════════════════════
+
+Una vez que Netlify terminó el segundo deploy (5-10 min):
+
+1. Ve a tu URL live (ej: https://recuperaya-abc123.netlify.app)
+2. Prueba los 6 flujos:
+   ✅ Landing page
+   ✅ Signup form
+   ✅ Interview form
+   ✅ Ver estimación
+   ✅ Generar PDF
+   ✅ Compartir por WhatsApp
+3. DevTools (F12) → Application → Service Workers → Debe mostrar "Active"
+4. En móvil: Abre URL → Botón "..." → "Add to Home Screen" → Debe funcionar
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 5: COMPARTIR POR WHATSAPP (30 segundos)
+═════════════════════════════════════════════
+
+Tu URL final será algo como:
+https://recuperaya-abc123.netlify.app
+
+IMPORTANTE: Después de agregar un dominio personalizado, será:
+https://recuperaya.com (si lo tienes)
+
+Comparte por WhatsApp:
+---
+Hola! Te comparto mi plataforma de reclamación de cargos:
+https://recuperaya-abc123.netlify.app
+
+Es una PWA (app mobile sin necesidad de App Store).
+Instálala en tu celular y pruébala.
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PROBLEMAS FRECUENTES:
+═════════════════════
+
+❌ "El deploy falla"
+✅ Mira el log de build en Netlify Dashboard → Deploys → Click en build rojo
+
+❌ "Firebase no funciona"
+✅ Verifica que las env variables estén correctas en Netlify Dashboard
+
+❌ "PWA no se instala"
+✅ Asegúrate de que estés en HTTPS (Netlify lo hace automático)
+✅ Espera a que el Service Worker esté Active
+
+❌ "¿Cómo cambio el dominio?"
+✅ Netlify Dashboard → Domain settings → Add custom domain
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TIMELINE TOTAL:
+═══════════════
+
+Paso 1 (GitHub):        5 min
+Paso 2 (Netlify):       5 min + 10 min espera de deploy
+Paso 3 (Env vars):      3 min + 10 min espera de deploy
+Paso 4 (Verificación):  5 min
+Paso 5 (Compartir):     30 seg
+
+TOTAL: ~40 minutos
+
+✅ MVP LIVE en tu URL
+
+═══════════════════════════════════════════════════════════════════════════════
+
+¿NECESITAS AYUDA?
+═════════════════
+
+Cualquier duda en los pasos anteriores, me la preguntas en el chat.
+
+Cuando hayas hecho Paso 2 (conectar a Netlify), me dices la URL y te ayudo
+a verificar que todo funcione correctamente.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FELICIDADES! 🎉
+
+Tu MVP está listo para mostrar al cliente. Es una PWA real, funciona offline,
+se instala como app, y está deployada en una URL única que puedes compartir
+por WhatsApp.
+
+¡Adelante! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════
